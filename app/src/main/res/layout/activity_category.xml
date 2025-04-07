@@ -12,13 +12,16 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Titulo:" />
+        android:text="Titulo:"
+        android:textAlignment="center"
+        android:textSize="20sp"/>
 
-    <TextView
+    <EditText
         android:id="@+id/titleEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="¿Cual es la categoria" />
+        android:hint="¿Cual es la categoria"
+        android:textSize="18dp"/>
 
     <Button
         android:id="@+id/saveButton"
