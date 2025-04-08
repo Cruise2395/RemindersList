@@ -25,11 +25,11 @@ class DataBaseManager(context: Context): SQLiteOpenHelper(context, DATABASE_NAME
         private const val SQL_DROP_TABLE_TASK = "DROP TABLE IF EXISTS ${Task.TABLE_NAME}"
 
         private const val SQL_CREATE_TABLE_CATEGORY=
-            "CREATE TABLE$${Category.TABLE_NAME}(" +
+            "CREATE TABLE ${Category.TABLE_NAME}(" +
                     "${Category.COLUMN_NAME_ID} INTEGER PRIMARY KEY AUTOINCREMENT," +
-                    "${Category.COLUMN_NAME_TITLE} TEXT"
+                    "${Category.COLUMN_NAME_TITLE} TEXT)"
 
-    private const val SQL_DROP_TABLE_CATEGORY = "DROP TABLE IF EXITS ${Category.TABLE_NAME}"
+    private const val SQL_DROP_TABLE_CATEGORY = "DROP TABLE IF EXISTS ${Category.TABLE_NAME}"
     }
 
     override fun onCreate(db: SQLiteDatabase) {
@@ -39,8 +39,8 @@ class DataBaseManager(context: Context): SQLiteOpenHelper(context, DATABASE_NAME
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
-        onDestroy(db)
         onCreate(db)
+        onDestroy(db)
     }
 
     private fun onDestroy(db: SQLiteDatabase){

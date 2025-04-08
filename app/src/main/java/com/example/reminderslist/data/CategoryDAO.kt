@@ -31,7 +31,7 @@ class CategoryDAO (context: Context) {
         //Gets the data repository in write mode
         val db = dataBaseManager.writableDatabase
 
-        //Create a new map of values, where columns namers are the keys
+        //Create a new map of values, where columns names are the keys
         val values = ContentValues().apply {
             put(Category.COLUMN_NAME_TITLE, category.title)
         }

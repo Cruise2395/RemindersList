@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
 
         categoryDAO = CategoryDAO(this)
 
-        supportActionBar?.title = "MIS CATEGORIAS"
+        supportActionBar?.title = "CATEGORIAS"
 
         adapter = CategoryAdapter(emptyList(), ::showCategory, ::editCategory, ::deleteCategory)
         binding.recyclerView.adapter = adapter
